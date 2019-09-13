@@ -6,10 +6,11 @@ verify_ssl = true
 [dev-packages]
 pep8 = "*"
 autopep8 = "*"
+v = {editable = true,version = "*"}
 
 [packages]
+django = "*"
 twilio = "*"
-requests = "*"
 
 [requires]
 python_version = "3.7"
