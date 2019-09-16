@@ -16,11 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-# from rest_auth.views import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # for login / register via browsable api
-    path('api-auth/', include('rest_framework.urls')),
-    path('api/rest-auth/', include('rest_auth.urls'))
+    path('api/api-auth/', include("rest_framework.urls")),
+    path('api/rest-auth/', include("rest_auth.urls")),
 ]

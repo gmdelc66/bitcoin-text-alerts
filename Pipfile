@@ -11,6 +11,9 @@ v = {editable = true,version = "*"}
 [packages]
 django = "*"
 twilio = "*"
+djangorestframework = "*"
+django-rest-auth = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
