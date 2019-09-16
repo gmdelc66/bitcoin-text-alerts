@@ -14,6 +14,7 @@ twilio = "*"
 djangorestframework = "*"
 django-rest-auth = "*"
 requests = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.7"

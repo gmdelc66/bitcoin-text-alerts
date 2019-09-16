@@ -18,8 +18,17 @@ from django.urls import include, path
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # for login / register via browsable api
-    path('api/api-auth/', include("rest_framework.urls")),
-    path('api/rest-auth/', include("rest_auth.urls")),
+    path("admin/", admin.site.urls),
+
+    # below are endpoints for profile records
+    path("api/", include("profiles.api.urls")),
+
+    # below are endpoints for browsable API
+    path("api/api-auth/", include("rest_framework.urls")),
+
+    # below are endpoints for REST authentication
+    path("api/rest-auth/", include("rest_auth.urls")),
+
+    # below are endpoints for REST registration
+    path("api/rest-auth/registration", include("rest_auth.registration.urls"))
 ]

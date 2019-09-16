@@ -37,11 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # required for allauth (sites)
+    'django.contrib.sites',
 
     'rest_framework',
     'rest_framework.authtoken',
 
+    # creates REST endpoint for profile creation
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'rest_auth',
+    # .registration required for allauth
+    'rest_auth.registration',
 
     'alerts',
     'profiles'
@@ -133,3 +142,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
     ]
 }
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_EMAIL_REQUIRED = (False)
