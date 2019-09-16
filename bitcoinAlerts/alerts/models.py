@@ -24,7 +24,7 @@ class Alert(models.Model):
         (EUROS, 'Euros')
     ]
 
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     quote_currency = models.CharField(max_length=64, blank=False,
                                       choices=QUOTE_CURRENCY_CHOICES)
     base_currency = models.CharField(max_length=64, blank=False,

@@ -17,18 +17,28 @@ from django.contrib import admin
 from django.urls import include, path
 
 
+# add app patterns to this list
+app_patterns = [
+    path("profiles/", include("profiles.api.urls")),
+    path("alerts/", include("alerts.api.urls")),
+]
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
 
-    # below are endpoints for profile records
+    # endpoints for profile Views
     path("api/", include("profiles.api.urls")),
 
-    # below are endpoints for browsable API
+    # endpoints for Alert Views
+    path("api/", include("alerts.api.urls")),
+
+    # endpoints for browsable API
     path("api/api-auth/", include("rest_framework.urls")),
 
-    # below are endpoints for REST authentication
+    # endpoints for REST authentication
     path("api/rest-auth/", include("rest_auth.urls")),
 
-    # below are endpoints for REST registration
+    # endpoints for REST registration
     path("api/rest-auth/registration", include("rest_auth.registration.urls"))
 ]
